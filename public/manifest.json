@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Freedium Redirect",
+  "version": "1.0.0",
+  "description": "Automatically redirects Medium articles through freedium.cfd",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "host_permissions": [
+    "*://*.medium.com/*",
+    "*://*.levelup.gitconnected.com/*",
+    "*://*.towardsdatascience.com/*",
+    "*://*.betterprogramming.pub/*",
+    "*://freedium.cfd/*"
+  ]
+}
