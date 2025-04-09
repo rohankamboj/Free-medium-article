@@ -22,9 +22,9 @@ const createFreediumUrl = (url: string): string => {
 };
 
 // Listen for tab updates
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (changeInfo.status === 'loading' && tab.url && isMediumArticle(tab.url)) {
-    const freediumUrl = createFreediumUrl(tab.url);
+chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
+  if (changeInfo.url && isMediumArticle(changeInfo.url)) {
+    const freediumUrl = createFreediumUrl(changeInfo.url);
     chrome.tabs.update(tabId, { url: freediumUrl });
   }
 });

@@ -4,8 +4,6 @@
   "version": "1.0.0",
   "description": "Automatically redirects Medium articles through freedium.cfd",
   "permissions": [
-    "webRequest",
-    "webRequestBlocking",
     "tabs"
   ],
   "background": {
